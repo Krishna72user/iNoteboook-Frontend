@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import NoteContext from "./NoteContext.jsx";
 import { useNavigate } from "react-router-dom";
 const NoteState=(props)=>{
-  const host =import.meta.env.VITE_HOSTNAME
+  const host ='https://inotebook-backend-x6j4.onrender.com'
   const navigate = useNavigate();
   const [notes,setNotes]=useState([]);
   const [status,setStatus]=useState('none')
