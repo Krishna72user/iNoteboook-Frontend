@@ -1,0 +1,12 @@
+@import "tailwindcss";
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: gainsboro;
+}
+::-webkit-scrollbar-thumb{
+    background-color: gray ;
+    border-radius: 2px;
+}
+body{
+    overflow-x: hidden;
+}
