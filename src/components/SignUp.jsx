@@ -1,7 +1,7 @@
 import { useRef ,useState} from "react"
 import { useNavigate } from "react-router-dom"
 export default function Login(){
-    const host = "http://localhost:3000"
+    const host = import.meta.env.VITE_HOSTNAME
     let email = useRef(null)
     let password = useRef(null)
     let name = useRef(null)

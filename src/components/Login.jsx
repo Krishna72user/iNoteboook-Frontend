@@ -2,7 +2,7 @@ import { useContext, useRef ,useState} from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import NoteContext from "../context/NoteContext"
 export default function Login(){
-    const host = "http://localhost:3000"
+    const host = import.meta.env.VITE_HOSTNAME
     let email = useRef(null)
     let password = useRef(null)
     const [show,setShow]=useState(true)
