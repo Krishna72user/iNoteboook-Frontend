@@ -3,25 +3,12 @@ import NoteContext from "../context/NoteContext"
 import Notes from "./Notes"
 import Modal from "./Modal"
 export default function Navbar(){
-    const {addNote,status}=useContext(NoteContext)
+    const {addNote,status,signS}=useContext(NoteContext)
     const title  = useRef(null)
     const description = useRef(null)
     const tag = useRef(null)
 
 
-
-    // const [title,setTitle]=useState("")
-    // const [description,setDescription]=useState("")
-    // const [tag,setTag]=useState("")
-    // const handleTitleChange = (e)=>{
-    //     setTitle(e.target.value)
-    // }
-    // const handleDescriptionChange = (e)=>{
-    //     setDescription(e.target.value)
-    // }
-    // const handleTagChange = (e)=>{
-    //     setTag(e.target.value)
-    // }
     const handleClick=(e)=>{
         e.preventDefault();
         addNote(title.current.value,description.current.value,tag.current.value)
@@ -49,7 +36,7 @@ export default function Navbar(){
                     </form>
                     <div className="text-3xl font-bold">Your Notes</div>
                     <div id="notes" className="w-[70vw]">
-                        <Notes/> 
+                       {signS && <Notes/> }
                     </div>
                 </div>
                 <div>

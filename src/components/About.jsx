@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 export default function About() {
     return (
         <>
-            <div className="min-h-screen py-10 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center px-6">
+            <div className="min-h-screen py-10 pt-30 md:pt-10 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center px-6">
                 <div className="bg-white shadow-lg rounded-2xl p-8 max-w-3xl text-center">
                     <h1 className="text-4xl font-bold text-gray-800 mb-4">About <span className="text-blue-500">iNotebook</span></h1>
                     <p className="text-gray-600 text-lg leading-relaxed">

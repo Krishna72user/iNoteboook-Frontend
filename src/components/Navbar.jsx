@@ -1,8 +1,9 @@
 import { NavLink,useLocation } from "react-router-dom"
+import NoteContext from "../context/NoteContext";
+import { useContext } from "react";
 export default function Navbar(){
-    const handleLogout=()=>{
-        localStorage.removeItem('authToken')
-    }
+    const {handleLogout}=useContext(NoteContext)
+    
     const endP = useLocation();
     return(
         <>
@@ -16,7 +17,6 @@ export default function Navbar(){
             {!localStorage.getItem('authToken') &&  <NavLink className={endP.pathname==='/signup'?"font-bold":""}  to='/signup'end>Sign Up</NavLink>}
             </div>
         </nav>
-        {!endP.pathname==='/about'&&<div className="h-14"></div>}
         </>
     )
 }

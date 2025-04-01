@@ -1,9 +1,10 @@
-import { useContext } from "react"
+import { useContext,useState,useEffect } from "react"
 import NoteContext from "../context/NoteContext"
 import NoteItem from "./NoteItem"
 
 export default function Notes(){
     const {notes}= useContext(NoteContext)
+    
     return(
         <>
         <div className="flex flex-wrap gap-4">
@@ -12,4 +13,4 @@ export default function Notes(){
         </div>
         </>
     )
-} 
+}

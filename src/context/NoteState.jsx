@@ -5,9 +5,11 @@ const NoteState=(props)=>{
   const host = import.meta.env.VITE_HOSTNAME
   const navigate = useNavigate();
   const [notes,setNotes]=useState([]);
+  const [signS,setSignS]=useState();
   const [status,setStatus]=useState('none')
   const [Id,setId]=useState(null)
   const getNotes=async ()=>{
+    setSignS(true);
     const res =await fetch(`${host}/notes/fetchAllnotes`,{
       method: 'GET',  // Specify POST methods
       headers: {
@@ -51,7 +53,10 @@ const NoteState=(props)=>{
       });
       getNotes();
     }
-
+    const handleLogout=()=>{
+      localStorage.removeItem('authToken')
+      setSignS(false)
+    }
     // Edit a note
     const openModal = ()=>{
       if(status==='none')
@@ -72,7 +77,7 @@ const NoteState=(props)=>{
     }
 
     return(
-        <NoteContext.Provider value={{notes,setNotes,addNote,deleteNote,editNote,status,setStatus,Id,setId,openModal}}>
+        <NoteContext.Provider value={{notes,setNotes,addNote,deleteNote,editNote,status,setStatus,Id,setId,openModal,handleLogout,signS}}>
             {props.children}
         </NoteContext.Provider>
     )

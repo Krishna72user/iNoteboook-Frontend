@@ -1,6 +1,5 @@
-import { useContext, useRef ,useState} from "react"
+import { useRef ,useState} from "react"
 import { NavLink, useNavigate } from "react-router-dom"
-import NoteContext from "../context/NoteContext"
 export default function Login(){
     const host = import.meta.env.VITE_HOSTNAME
     let email = useRef(null)
@@ -26,8 +25,7 @@ export default function Login(){
             setShow(false)
         }
     }
-    const handleSign=()=>{
-    }
+
     return(
         <>
         <div className="h-[80vh] flex items-center">
